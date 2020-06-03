@@ -87,6 +87,7 @@ class Main(QtWidgets.QMainWindow, recognition.Ui_MainWindow):  # Класс ок
                 # текст со скана -- процентов 80 минимум
                 # оптическое распознавание здесь для сравнения точности с распознанными из QR-кода данными
                 # язык лучше оставить один, т.к. как правило, вавилонское смешение в конечном итоге уменьшает точность
+
                 dec = pytesseract.image_to_string(img, lang='rus', output_type=Output.STRING, config="--psm " + str(6))
                 #dec = corrector(dec)
 
@@ -513,7 +514,7 @@ class Mainn(QtWidgets.QMainWindow, des.Ui_Form):
         self.time = Time(end)
         self.close()
         self.win.show()
-        # self.time.show()
+        self.time.show()
 
 
     # Окно выбора папки с чеками
